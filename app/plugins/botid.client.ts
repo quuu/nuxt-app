@@ -5,7 +5,7 @@ export default defineNuxtPlugin({
     setup() {
         console.log('Initializing BotId plugin...');
         initBotId({
-            protect: [{ path: '/api/contact/test', method: 'POST' }],
+            protect: [{ path: '/api/contact/botcheck', method: 'POST' }],
         });
         console.log('BotId plugin initialized.');
     },
