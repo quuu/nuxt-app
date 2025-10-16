@@ -21,12 +21,11 @@ const state = ref({
 const response = ref(null)
 async function submit() {
     try {
-        const res = await fetch('/api/contact/test', {
+        response.value =await $fetch('/api/contact/test', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName: state.value.firstName })
+            body: { firstName: state.value.firstName }
         })
-        response.value = await res.json()
     } catch (error) {
         alert('Submission failed.')
     }
