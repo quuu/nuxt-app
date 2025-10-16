@@ -4,7 +4,7 @@ import { checkBotId } from 'botid/server';
 export default defineEventHandler(async (event) => {
     const headers = getRequestHeaders(event);
     console.log('Received Headers:', headers);
-    const verification = await checkBotId();
+    const verification = await checkBotId({advancedOptions: { headers: headers }});
     console.log('BotID Verification:', verification);
     console.log('Incoming Request Headers:', headers);
     if (verification.isBot) {
