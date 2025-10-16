@@ -21,8 +21,8 @@ const state = ref({
 const response = ref(null)
 async function submit() {
     try {
-        response.value =await $fetch('/api/contact/test', {
-            method: 'post',
+        response.value = await $fetch('/api/contact/test', {
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: { firstName: state.value.firstName }
         })
